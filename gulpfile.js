@@ -16,17 +16,20 @@ const paths = {
 		comp: './src/css/**/*.css',
 		dest: './src/css',
 		dist: './dist/css',
-		maps: './'
+		maps: './',
+		watch: './src/sass/**/*.scss'
 	},
 	html: {
-		src: './src/pug/**/*.pug',
+		src: ['./src/pug/**/*.pug', '!./src/pug/**/_*.pug'],
 		comp: './src/**/*.html',
 		dest: './src',
-		dist: './dist'
+		dist: './dist',
+		watch: './src/pug/**/*.pug'
 	},
 	assets: {
 		src: './src/assets/**/*',
-		dist: './dist/assets'
+		dist: './dist/assets',
+		watch: './src/assets/**/*'
 	}
 }
 
@@ -83,13 +86,13 @@ function distributeAssets(){
 
 // watch files for changes
 function watch(){
-	gulp.watch(paths.css.src, buildCss)
-	gulp.watch(paths.html.src, buildHtml)
-	gulp.watch(paths.assets.src, browserSync.reload())
+	gulp.watch(paths.css.watch, buildCss)
+	gulp.watch(paths.html.watch, buildHtml)
+	gulp.watch(paths.assets.watch, browserSync.reload())
 }
 
 // sync browser and watch for changes
-function sync(){
+function syncBrowser(){
 	browserSync.init({
 		server: {
 			baseDir: './src'
@@ -100,6 +103,8 @@ function sync(){
 }
 
 const build = gulp.series(buildCss, buildHtml, distributeCss, distributeHtml, distributeAssets)
+
+const sync = gulp.series(buildCss, buildHtml, syncBrowser)
 
 exports.default = help
 exports.build = build
