@@ -9,7 +9,7 @@ This project was inspired by [Lynn Fisher's project](https://github.com/lynnandt
 
 This project uses [Pug](https://pugjs.org/api/getting-started.html) for templating, [SCSS](https://sass-lang.com/) for css preprocessing and [Gulp](https://gulpjs.com/) for the development workflow. 
 
-Each design can also be found on in my [A Single Div Codepen Collection](https://codepen.io/collection/pgowkP), where you can fork and play around with the code with ease.
+Each design can also be found on in my [A Single Div Codepen Collection](https://codepen.io/collection/pgowkP), where you can fork and play around with the code with ease. Click on any design in the deployed or local application to navigate to the corresponding Codepen editor.
 
 ## Prerequisites 
 - [NodeJS](https://nodejs.org/en/)
@@ -31,7 +31,7 @@ This project utilizes Gulp for the development workflow. If you just want to vie
 | `gulp build`  | Compile and minify Pug and SCSS for distribution  |
 
 ## Sharing
-Feel free to copy paste as much as you'd like, to edit it, and to experiment. That is, after all the point of the project! If you reuse a significant portion of CSS or full drawings, credit would be appreciated! 
+Feel free to copy/paste as much as you'd like, to edit, and to experiment. That is, after all the point of the project! If you reuse a significant portion of CSS or full drawings, credit would be appreciated! 
 
 ## Contributions
 I'm not currently accepting outside contributions on this repository, but stay tuned!
