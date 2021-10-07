@@ -1,0 +1,72 @@
+@use 'sass:math';
+
+#current {
+	background: seagreen;
+
+	div {
+		// variables
+		$maxWidth: 320px;
+		$maxHeight: $maxWidth;
+
+		$silver: silver;
+		$neutral100: hsl(0, 0%, 96%);
+		$neutral600: hsl(0, 0%, 13%);
+		$purple500: hsl(241, 33%, 33%);
+		$purple600: hsl(241, 33%, 25%);
+		
+		// helper functions
+		@function center($width){
+			@return math.div(100% - $width, 2);
+		}
+
+		width: $maxWidth;
+		height: $maxHeight;
+		position: relative;
+
+		// monitor
+		&::before {
+			content: '';
+			position: absolute;
+			width: 60%;
+			height: 40%;
+			top: 30%;
+			left: center(60%);
+
+			// vscode
+			$vscode-tabs: linear-gradient($purple500, $purple500) 62% 14% / 13% 4%;
+			$vscode-sidebar: linear-gradient(to right, $purple600 10%, transparent 10%) 90% 50% / 45% 80%;
+			$vscode: linear-gradient($purple600 8%, $purple500 8%) 90% 50% / 45% 80%;
+
+			// browser
+			$browser: linear-gradient($neutral100, $neutral100) 10% 50% / 45% 80%;
+
+			// border
+			$border: linear-gradient($neutral600, $neutral600) 0% 0% / 100% 100%;
+			
+			background: 
+				$vscode-tabs,
+				$vscode-sidebar,
+				$vscode,
+				$browser,
+				$border;
+			border-radius: 5px;
+			background-repeat: no-repeat;
+		}
+
+		// keyboard
+		&::after {
+			content: '';
+			position: absolute;
+			width: 75%;
+			height: 3%;
+			top: 69%;
+			left: center(75%);
+			
+			$keyboard: linear-gradient($silver, $silver) 0% 0% / 100% 100%;
+			
+			background: $keyboard;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+	}
+}

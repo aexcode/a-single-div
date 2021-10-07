@@ -60,4 +60,34 @@ main {
     width: 100%;
   }
 }
+#current {
+  background: seagreen;
+}
+#current div {
+  width: 320px;
+  height: 320px;
+  position: relative;
+}
+#current div::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 40%;
+  top: 30%;
+  left: 20%;
+  background: linear-gradient(#393870, #393870) 62% 14%/13% 4%, linear-gradient(to right, #2b2b55 10%, transparent 10%) 90% 50%/45% 80%, linear-gradient(#2b2b55 8%, #393870 8%) 90% 50%/45% 80%, linear-gradient(whitesmoke, whitesmoke) 10% 50%/45% 80%, linear-gradient(#212121, #212121) 0% 0%/100% 100%;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+}
+#current div::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 3%;
+  top: 69%;
+  left: 12.5%;
+  background: linear-gradient(silver, silver) 0% 0%/100% 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 /*# sourceMappingURL=style.css.map */
