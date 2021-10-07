@@ -60,34 +60,35 @@ main {
     width: 100%;
   }
 }
-#current {
+#laptop {
   background: seagreen;
 }
-#current div {
+#laptop div {
   width: 320px;
   height: 320px;
   position: relative;
 }
-#current div::before {
+#laptop div::before {
   content: "";
   position: absolute;
   width: 60%;
   height: 40%;
   top: 30%;
   left: 20%;
-  background: linear-gradient(#393870, #393870) 62% 14%/13% 4%, linear-gradient(to right, #2b2b55 10%, transparent 10%) 90% 50%/45% 80%, linear-gradient(#2b2b55 8%, #393870 8%) 90% 50%/45% 80%, linear-gradient(whitesmoke, whitesmoke) 10% 50%/45% 80%, linear-gradient(#212121, #212121) 0% 0%/100% 100%;
+  background: linear-gradient(#c2c2c2, #c2c2c2) 75% 25%/20% 1%, linear-gradient(#c2c2c2, #c2c2c2) 85.5% 30%/30% 1%, linear-gradient(#c2c2c2, #c2c2c2) 70.5% 36%/15% 1%, linear-gradient(#c2c2c2, #c2c2c2) 80% 42%/25% 1%, linear-gradient(#393870, #393870) 62% 14%/13% 4%, linear-gradient(to right, #2b2b55 10%, transparent 10%) 90% 50%/45% 80%, linear-gradient(#2b2b55 8%, #393870 8%) 90% 50%/45% 80%, linear-gradient(whitesmoke, whitesmoke) 20% 58%/4% 5%, linear-gradient(whitesmoke, whitesmoke) 32.5% 58%/4% 5%, linear-gradient(#635327, #635327) 26% 62%/5% 13.5%, linear-gradient(45deg, #9c7842 50%, transparent 50%) 30% 40.5%/10% 15%, linear-gradient(-45deg, #9c7842 50%, transparent 50%) 19% 40.5%/10% 15%, linear-gradient(#635327, #635327) 32% 40%/3% 15%, linear-gradient(#cc943f, #cc943f) 21.5% 60%/20% 18%, linear-gradient(whitesmoke, whitesmoke) 10% 50%/45% 80%, linear-gradient(#212121, #212121) 0% 0%/100% 100%;
   border-radius: 5px;
   background-repeat: no-repeat;
 }
-#current div::after {
+#laptop div::after {
   content: "";
   position: absolute;
   width: 75%;
   height: 3%;
   top: 69%;
   left: 12.5%;
-  background: linear-gradient(silver, silver) 0% 0%/100% 100%;
+  background: linear-gradient(to right, #3b3b3b, whitesmoke, #3b3b3b) 0% 0%/100% 100%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=style.css.map */
