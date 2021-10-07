@@ -1,0 +1,102 @@
+@use 'sass:math';
+
+#laptop {
+	background: seagreen;
+
+	div {
+		// variables
+		$maxWidth: 320px;
+		$maxHeight: $maxWidth;
+
+		$neutral100: hsl(0, 0%, 96%);
+		$neutral200: hsl(0, 0%, 76%);
+		$neutral500: hsl(0, 0%, 23%);
+		$neutral600: hsl(0, 0%, 13%);
+
+		$purple500: hsl(241, 33%, 33%);
+		$purple600: hsl(241, 33%, 25%);
+
+		$tan300: #cc943f;
+		$tan400: #9c7842;
+		$tan500: #635327;
+		
+		// helper functions
+		@function center($width){
+			@return math.div(100% - $width, 2);
+		}
+
+		width: $maxWidth;
+		height: $maxHeight;
+		position: relative;
+
+		// monitor
+		&::before {
+			content: '';
+			position: absolute;
+			width: 60%;
+			height: 40%;
+			top: 30%;
+			left: center(60%);
+
+			// vscode
+			$code: 
+				linear-gradient($neutral200, $neutral200) 75% 25% / 20% 1%, 
+				linear-gradient($neutral200, $neutral200) 85.5% 30% / 30% 1%,
+				linear-gradient($neutral200, $neutral200) 70.5% 36% / 15% 1%,
+				linear-gradient($neutral200, $neutral200) 80% 42% / 25% 1%;
+			$vscode-tabs: linear-gradient($purple500, $purple500) 62% 14% / 13% 4%;
+			$vscode-sidebar: linear-gradient(to right, $purple600 10%, transparent 10%) 90% 50% / 45% 80%;
+			$vscode: linear-gradient($purple600 8%, $purple500 8%) 90% 50% / 45% 80%;
+
+			// house
+			$door: linear-gradient($tan500, $tan500) 26% 62% / 5% 13.5%;
+			$roof: 
+				linear-gradient(45deg, $tan400 50%, transparent 50%) 30% 40.5% / 10% 15%,
+				linear-gradient(-45deg, $tan400 50%, transparent 50%) 19% 40.5% / 10% 15%;
+			$chimney: linear-gradient($tan500, $tan500) 32% 40% / 3% 15%;
+			$windows: 
+				linear-gradient($neutral100, $neutral100) 20% 58% / 4% 5%,
+				linear-gradient($neutral100, $neutral100) 32.5% 58% / 4% 5%;
+			$house: 
+				$windows,
+				$door,
+				$roof,
+				$chimney,
+				linear-gradient($tan300, $tan300) 21.5% 60% / 20% 18%;
+			
+			// browser
+			$browser: linear-gradient($neutral100, $neutral100) 10% 50% / 45% 80%;
+
+			// border
+			$border: linear-gradient($neutral600, $neutral600) 0% 0% / 100% 100%;
+			
+			background: 
+				$code,
+				$vscode-tabs,
+				$vscode-sidebar,
+				$vscode,
+				$house,
+				$browser,
+				$border;
+			border-radius: 5px;
+			background-repeat: no-repeat;
+		}
+
+		// keyboard
+		&::after {
+			content: '';
+			position: absolute;
+			width: 75%;
+			height: 3%;
+			top: 69%;
+			left: center(75%);
+			
+			$keyboard: linear-gradient(to right, $neutral500, $neutral100, $neutral500) 0% 0% / 100% 100%;
+			
+			background: $keyboard;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			background-repeat: no-repeat;
+		}
+	}
+}
