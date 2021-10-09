@@ -60,6 +60,25 @@ main {
     width: 100%;
   }
 }
+#current {
+  background: #2b2b55;
+}
+#current div {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  border: 1px solid whitesmoke;
+}
+#current div::before {
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  bottom: 0%;
+  background: radial-gradient(#c85914 70%, transparent 70%) 50% 100%/25% 40%, radial-gradient(#a24810 70%, transparent 70%) 60% 100%/25% 40%, radial-gradient(#c85914 70%, transparent 70%) 65% 100%/40% 40%, radial-gradient(#a24810 70%, transparent 70%) 75% 100%/40% 40%, radial-gradient(#c85914 70%, transparent 70%) 80% 100%/40% 40%, radial-gradient(#a24810 70%, transparent 70%) 40% 100%/25% 40%, radial-gradient(#c85914 70%, transparent 70%) 35% 100%/40% 40%, radial-gradient(#a24810 70%, transparent 70%) 25% 100%/40% 40%, radial-gradient(#c85914 70%, transparent 70%) 20% 100%/40% 40%, radial-gradient(#2b2b55 70%, transparent 70%) 80% 55%/28% 28%, radial-gradient(#2b2b55 70%, transparent 70%) 20% 55%/28% 28%, linear-gradient(#717237, #717237) 50% 59%/20% 15%;
+  background-repeat: no-repeat;
+}
+
 #laptop {
   background: seagreen;
 }
