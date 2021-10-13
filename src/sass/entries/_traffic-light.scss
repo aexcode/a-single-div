@@ -1,5 +1,4 @@
 // box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]
-@use 'sass:math';
 
 #traffic-light {
 	background: hsl(241, 33%, 33%);
@@ -48,29 +47,32 @@
 			height: 5px;
 			background-color: $neutral600;
 			border-radius: 50%;
-			top: math.div((95 - 60), 2) + 0px;
-			left: math.div((100 - 60), 2) + 0px;
+			top: 17.5px;
+			left: 20px;
 			
-			$redLight:
+			$redLightOn:
 				27.5px 27.5px 0px 20px red(),
 				27.5px 27.5px 0px 25px red(40%);
 
 			$redLightOff:
-				27.5px 27.5px 0px 25px hsl(0, 0%, 0%, .5);
+				27.5px 27.5px 0px 25px hsl(0, 0%, 0%, .5),
+				$redLightOn;
 				
-			$yellowLight:
+			$yellowLightOn:
 				27.5px 110px 0px 20px yellow(),
 				27.5px 110px 0px 25px yellow(40%);
 			
 			$yellowLightOff:
-				27.5px 110px 0px 25px hsl(0, 0%, 0%, .5);
+				27.5px 110px 0px 25px hsl(0, 0%, 0%, .5),
+				$yellowLightOn;
 
-			$greenLight:
+			$greenLightOn:
 				27.5px 195px 0px 20px green(),
 				27.5px 195px 0px 25px green(40%);
 
 			$greenLightOff:
-				27.5px 195px 0px 25px hsl(0, 0%, 0%, .5);
+				27.5px 195px 0px 25px hsl(0, 0%, 0%, .5),
+				$greenLightOn;
 
 			$nails: 
 				0px 225px $neutral600,
@@ -87,15 +89,68 @@
 				55px 55px $neutral600,
 				0px 55px $neutral600;
 
-			box-shadow: 
-				// $redLightOff,
-				$redLight,
-				// $yellowLightOff,
-				$yellowLight,
-				// $greenLightOff,
-				$greenLight,
-				$nails;
-			}
+				animation: signal 5s infinite linear;
+
+				@keyframes signal {
+					0% {
+						box-shadow: 
+							$redLightOff,
+							$yellowLightOff,
+							$greenLightOn,
+							$nails;
+					}
+
+					30% {
+						box-shadow: 
+							$redLightOff,
+							$yellowLightOff,
+							$greenLightOn,
+							$nails;
+					}
+
+					30.1%, 
+					60% {
+						box-shadow: 
+							$redLightOff,
+							$yellowLightOn,
+							$greenLightOff,
+							$nails;
+					}
+
+					60% {
+						box-shadow: 
+						$redLightOff,
+						$yellowLightOn,
+						$greenLightOff,
+						$nails;
+					}
+
+					60.1%, 
+					90% {
+						box-shadow: 
+						$redLightOn,
+						$yellowLightOff,
+						$greenLightOff,
+						$nails;
+					}
+
+					90% {
+						box-shadow: 
+						$redLightOn,
+						$yellowLightOff,
+						$greenLightOff,
+						$nails;
+					}
+
+					90.1%, 
+					100% {
+						box-shadow: 
+						$redLightOff,
+						$yellowLightOff,
+						$greenLightOn,
+						$nails;
+					}
+				}
 		}
 	}
 }
