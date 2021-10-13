@@ -130,6 +130,15 @@ main {
     box-shadow: 27.5px 27.5px 0px 25px rgba(0, 0, 0, 0.5), 27.5px 27.5px 0px 20px #f20d0d, 27.5px 27.5px 0px 25px #c20a0a, 27.5px 110px 0px 25px rgba(0, 0, 0, 0.5), 27.5px 110px 0px 20px #f2f20d, 27.5px 110px 0px 25px #c2c20a, 27.5px 195px 0px 20px #0df20d, 27.5px 195px 0px 25px #0ac20a, 0px 225px #212121, 55px 225px #212121, 55px 170px #212121, 0px 170px #212121, 0px 140px #212121, 55px 140px #212121, 55px 85px #212121, 0px 85px #212121, 55px 0px #212121, 55px 55px #212121, 0px 55px #212121;
   }
 }
+#traffic-light div::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 24.9%;
+  left: 35%;
+  bottom: -24.9%;
+  background: linear-gradient(to right, #212121, #333333, #212121, #333333);
+}
 
 #laptop {
   background: seagreen;

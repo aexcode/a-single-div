@@ -1,4 +1,4 @@
-// box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]
+// future improvements: switch to %s to make it responsive
 
 #traffic-light {
 	background: hsl(241, 33%, 33%);
@@ -30,7 +30,9 @@
 		height: $maxHeight;
 		position: relative;
 
-		$trafficLightSquares: linear-gradient($neutral500 75px, $neutral500 75px, transparent 75px, transparent 85px, $neutral500 85px, $neutral500 160px, transparent 160px, transparent 170px, $neutral500 170px) 10px 10px / 80px 245px;
+		$trafficLightSquares: 
+			linear-gradient($neutral500 75px, $neutral500 75px, transparent 75px, transparent 85px, $neutral500 85px, $neutral500 160px, transparent 160px, transparent 170px, $neutral500 170px) 10px 10px / 80px 245px;
+			
 		$trafficLightBackground: linear-gradient($neutral600, $neutral600) 0 0 / 100% 100%;
 
 		background: 
@@ -157,6 +159,17 @@
 						$nails;
 					}
 				}
+		}
+
+		// pole
+		&::after {
+			content: '';
+			position: absolute;
+			width: 30%;
+			height: 24.9%;
+			left: 35%;
+			bottom: -24.9%;
+			background: linear-gradient(to right, $neutral600, $neutral500, $neutral600, $neutral500);
 		}
 	}
 }
