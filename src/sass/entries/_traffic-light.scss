@@ -1,0 +1,101 @@
+// box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]
+@use 'sass:math';
+
+#traffic-light {
+	background: hsl(241, 33%, 33%);
+
+	div {
+		// variables
+		$maxWidth: 100px;
+		$maxHeight: 265px;
+
+		// colors
+		$background: hsl(241, 33%, 33%);
+		$neutral500: hsl(0, 0%, 20%);
+		$neutral600: hsl(0, 0%, 13%);
+
+		@function red($lightness: 50%){
+			@return hsl(0, 90%, $lightness);
+		}
+
+		@function yellow($lightness: 50%){
+			@return hsl(60, 90%, $lightness);
+		}
+		
+		@function green($lightness: 50%){
+			@return hsl(120, 90%, $lightness);
+		}
+
+	
+		width: $maxWidth;
+		height: $maxHeight;
+		position: relative;
+
+		$trafficLightSquares: linear-gradient($neutral500 75px, $neutral500 75px, transparent 75px, transparent 85px, $neutral500 85px, $neutral500 160px, transparent 160px, transparent 170px, $neutral500 170px) 10px 10px / 80px 245px;
+		$trafficLightBackground: linear-gradient($neutral600, $neutral600) 0 0 / 100% 100%;
+
+		background: 
+		$trafficLightSquares,
+		$trafficLightBackground;
+		background-repeat: no-repeat;
+		border-radius: 8px;
+
+		// circles
+		&::before {
+			content: '';
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			background-color: $neutral600;
+			border-radius: 50%;
+			top: math.div((95 - 60), 2) + 0px;
+			left: math.div((100 - 60), 2) + 0px;
+			
+			$redLight:
+				27.5px 27.5px 0px 20px red(),
+				27.5px 27.5px 0px 25px red(40%);
+
+			$redLightOff:
+				27.5px 27.5px 0px 25px hsl(0, 0%, 0%, .5);
+				
+			$yellowLight:
+				27.5px 110px 0px 20px yellow(),
+				27.5px 110px 0px 25px yellow(40%);
+			
+			$yellowLightOff:
+				27.5px 110px 0px 25px hsl(0, 0%, 0%, .5);
+
+			$greenLight:
+				27.5px 195px 0px 20px green(),
+				27.5px 195px 0px 25px green(40%);
+
+			$greenLightOff:
+				27.5px 195px 0px 25px hsl(0, 0%, 0%, .5);
+
+			$nails: 
+				0px 225px $neutral600,
+				55px 225px $neutral600,
+				55px 170px $neutral600,
+				0px 170px $neutral600,
+
+				0px 140px $neutral600,
+				55px 140px $neutral600,
+				55px 85px $neutral600,
+				0px 85px $neutral600,
+
+				55px 0px $neutral600,
+				55px 55px $neutral600,
+				0px 55px $neutral600;
+
+			box-shadow: 
+				// $redLightOff,
+				$redLight,
+				// $yellowLightOff,
+				$yellowLight,
+				// $greenLightOff,
+				$greenLight,
+				$nails;
+			}
+		}
+	}
+}

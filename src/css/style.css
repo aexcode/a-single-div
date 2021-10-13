@@ -60,6 +60,29 @@ main {
     width: 100%;
   }
 }
+#traffic-light {
+  background: #393870;
+}
+#traffic-light div {
+  width: 100px;
+  height: 265px;
+  position: relative;
+  background: linear-gradient(#333333 75px, #333333 75px, transparent 75px, transparent 85px, #333333 85px, #333333 160px, transparent 160px, transparent 170px, #333333 170px) 10px 10px/80px 245px, linear-gradient(#212121, #212121) 0 0/100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+#traffic-light div::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #212121;
+  border-radius: 50%;
+  top: 17.5px;
+  left: 20px;
+  box-shadow: 27.5px 27.5px 0px 20px #f20d0d, 27.5px 27.5px 0px 25px #c20a0a, 27.5px 110px 0px 20px #f2f20d, 27.5px 110px 0px 25px #c2c20a, 27.5px 195px 0px 20px #0df20d, 27.5px 195px 0px 25px #0ac20a, 0px 225px #212121, 55px 225px #212121, 55px 170px #212121, 0px 170px #212121, 0px 140px #212121, 55px 140px #212121, 55px 85px #212121, 0px 85px #212121, 55px 0px #212121, 55px 55px #212121, 0px 55px #212121;
+}
+
 #laptop {
   background: seagreen;
 }
